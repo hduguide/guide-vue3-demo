@@ -2,12 +2,18 @@ import { createRouter, createWebHashHistory, Router, RouteRecordRaw } from 'vue-
 import Home from '@/views/Home.vue'
 import Vuex from '@/views/Vuex.vue'
 import Test from '@/views/Test.vue'
+import Articles from '@/views/Articles.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
     name: 'Home',
     component: Home
+  },
+  {
+    path: '/articles',
+    name: 'Articles',
+    component: Articles
   },
   {
     path: '/vuex',

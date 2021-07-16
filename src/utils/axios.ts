@@ -1,10 +1,12 @@
 import Axios, { AxiosInstance } from 'axios'
 import { ElMessage } from 'element-plus'
 
-const baseURL = 'https://api.github.com'
+// const baseURL = 'https://api.github.com'
+// const baseURL = 'https://yuque-api.dreamer2q.wang/api/v2'
+// const baseURL = 'http://192.168.1.12/api/v2'
 
 const axios: AxiosInstance = Axios.create({
-  baseURL,
+  baseURL: '/api/v2',
   timeout: 20000 // 请求超时 20s
 })
 
