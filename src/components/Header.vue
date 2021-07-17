@@ -42,7 +42,7 @@ export default defineComponent({
   background: #fff;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  // align-items: center;
   padding: 0 20px;
   box-sizing: border-box;
   font-weight: bold;

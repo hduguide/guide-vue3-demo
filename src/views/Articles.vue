@@ -1,11 +1,7 @@
 <template>
-  <el-row>
-    <el-col :span="4">
-      <DocTree @nodeClick="onNodeClick" />
-    </el-col>
-    <el-col :span="20">
-      <DocView :slug="currSlug" />
-    </el-col>
+  <el-row justify="start">
+    <DocTree @nodeClick="onNodeClick" />
+    <DocView :slug="currSlug" />
   </el-row>
 </template>
 
