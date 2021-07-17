@@ -1,11 +1,11 @@
 <template>
   <el-container>
     <el-header>
-      <h1>
+      <h1 class="articles_title">
         {{ title }}
       </h1>
     </el-header>
-    <div v-html="body_html"></div>
+    <div v-html="body_html" class="articles"></div>
   </el-container>
 </template>
 
@@ -36,4 +36,17 @@ export default {
 }
 </script>
 
-<style></style>
+<style>
+.articles {
+  border: 0px;
+  margin: 0px;
+  height: 543px;
+  overflow-y: scroll;
+}
+.articles_title {
+  border: 0px;
+  margin: 0px;
+  font-size: 35px;
+  text-align: center;
+}
+</style>

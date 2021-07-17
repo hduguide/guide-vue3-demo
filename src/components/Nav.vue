@@ -44,9 +44,9 @@ export default {
           path: '/axios'
         },
         {
-          name: 'Test',
+          name: 'About',
           isActive: false,
-          path: '/test'
+          path: '/about'
         }
       ],
       currentIndex: '0',

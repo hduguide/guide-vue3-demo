@@ -1,5 +1,5 @@
 <template>
-  <div class="main-container">
+  <div class="main-container" style="overflow-y: hidden">
     <el-container>
       <el-header>
         <el-container>
@@ -10,7 +10,6 @@
       <el-main>
         <router-view />
       </el-main>
-      <el-footer> Footer </el-footer>
     </el-container>
   </div>
 </template>
@@ -38,10 +37,11 @@ $left-side-width = 80px;
   // background-color: #B3C0D1;
   // color: #333;
   // text-align: center;
+  height:100%;
 }
 
 .el-aside {
-  background-color: #D3DCE6;
+  // background-color: #D3DCE6;
   // color: #333;
   // text-align: center;
   width: 100px;
@@ -49,7 +49,9 @@ $left-side-width = 80px;
 }
 
 .el-main {
-  background-color: #E9EEF3;
+  // background-color: #E9EEF3;
+  border:0px;
+  padding: 0px;
   // color: #333;
 }
 

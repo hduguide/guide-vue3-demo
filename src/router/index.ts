@@ -1,7 +1,7 @@
 import { createRouter, createWebHashHistory, Router, RouteRecordRaw } from 'vue-router'
 import Home from '@/views/Home.vue'
 import Vuex from '@/views/Vuex.vue'
-import Test from '@/views/Test.vue'
+import About from '@/views/About.vue'
 import Articles from '@/views/Articles.vue'
 
 const routes: Array<RouteRecordRaw> = [
@@ -29,9 +29,9 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import('@/views/Axios.vue') // 懒加载 Axios 组件
   },
   {
-    path: '/test',
-    name: 'Test',
-    component: Test
+    path: '/about',
+    name: 'About',
+    component: About
   }
 ]
 

@@ -1,6 +1,6 @@
 <template>
-  <div style="width: 300px">
-    <el-tree :data="tree" :props="defaultProps" @node-click="handleNodeClick">
+  <div>
+    <el-tree :data="tree" :props="defaultProps" @node-click="handleNodeClick" :span="5">
     </el-tree>
   </div>
 </template>

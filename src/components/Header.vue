@@ -24,7 +24,7 @@ export default defineComponent({
     })
 
     const goGitHub = () => {
-      window.open('https://github.com/XPoet/vite-vue3-starter')
+      window.open('https://github.com/hduguide/vue3-starter')
     }
 
     return {
@@ -37,15 +37,15 @@ export default defineComponent({
 
 <style scoped lang="stylus">
 .header {
-  // width: 100%;
-  height: 100%;
+  //height: 100%;
   background: #fff;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 20px;
+  padding: 10 10 10 10px;
   box-sizing: border-box;
   font-weight: bold;
+
 
   .title {
     font-size: 20px;
