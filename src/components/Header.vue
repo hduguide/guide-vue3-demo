@@ -41,8 +41,8 @@ export default defineComponent({
   background: #fff;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding: 10 10 10 10px;
+  // align-items: center;
+  padding: 0 20px;
   box-sizing: border-box;
   font-weight: bold;
 

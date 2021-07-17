@@ -1,5 +1,5 @@
 <template>
-  <el-row>
+  <el-row justify="start">
     <el-col :span="5">
       <DocTree @nodeClick="onNodeClick" />
     </el-col>
