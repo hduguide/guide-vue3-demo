@@ -1,41 +1,34 @@
-import { defineComponent, DefineComponent, onMounted } from 'vue';
 <template>
-  <div>Test Page</div>
-  <div v-html="message"></div>
-  <button @click="getMessage">Test</button>
+  <el-row>
+    <el-col :span="4">
+      <DocTree @nodeClick="onNodeClick" />
+    </el-col>
+    <el-col :span="20">
+      <DocView :slug="currSlug" />
+    </el-col>
+  </el-row>
 </template>
 
 <script>
-import { defineComponent } from 'vue'
-import axios from '../utils/axios'
+// import DocTile from '@/components/document/DocTile.vue'
+import DocTree from '@/components/document/DocTree.vue'
+import DocView from '@/components/document/DocView.vue'
 
-export default defineComponent({
-  name: 'TestPage',
+export default {
+  components: { DocTree, DocView },
+  name: 'Articles',
   setup() {},
   methods: {
-    getMessage() {
-      axios.get('/repos/hduer/guide/docs/choose-networks').then((val) => {
-        this.$data.message = val.data.data.body_html
-        console.log(val.data.data)
-      })
+    onNodeClick(data) {
+      this.currSlug = data.slug
     }
   },
   data() {
     return {
-      data: [
-        {
-          id: 1,
-          title: 'test title'
-        }
-      ],
-      message: 'Hello, Jack'
+      currSlug: 'readme'
     }
   }
-})
+}
 </script>
 
-<style>
-.test-page {
-  background-color: antiquewhite;
-}
-</style>
+<style></style>

@@ -13,7 +13,10 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/articles',
     name: 'Articles',
-    component: Articles
+    component: Articles,
+    meta: {
+      referrer: 'no-referrer'
+    }
   },
   {
     path: '/vuex',

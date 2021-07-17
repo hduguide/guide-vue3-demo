@@ -1,8 +1,8 @@
 <template>
   <div class="header">
-    <div class="title" @click="router.push('/')">
+    <!-- <div class="title" @click="router.push('/')">
       Vite2.x + Vue3.x + TypeScript Starter
-    </div>
+    </div> -->
     <div class="go-github" @click="goGitHub">
       <i class="icon el-icon-s-promotion"></i> GitHub
     </div>
@@ -11,12 +11,17 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
+import { useMeta } from 'vue-meta'
 import { useRouter } from 'vue-router'
 
 export default defineComponent({
   name: 'Header',
   setup() {
     const router = useRouter()
+
+    useMeta({
+      title: 'Test title'
+    })
 
     const goGitHub = () => {
       window.open('https://github.com/XPoet/vite-vue3-starter')
@@ -32,7 +37,7 @@ export default defineComponent({
 
 <style scoped lang="stylus">
 .header {
-  width: 100%;
+  // width: 100%;
   height: 100%;
   background: #fff;
   display: flex;

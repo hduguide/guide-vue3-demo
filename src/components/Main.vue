@@ -1,21 +1,18 @@
 <template>
-  <main class="main-container">
-    <div class="top">
-      <Header />
-    </div>
-
-    <div class="bottom">
-      <div class="left">
-        <Nav />
-      </div>
-
-      <div class="right">
-        <div class="content">
-          <router-view />
-        </div>
-      </div>
-    </div>
-  </main>
+  <div class="main-container">
+    <el-container>
+      <el-header>
+        <el-container>
+          <Nav />
+          <Header />
+        </el-container>
+      </el-header>
+      <el-main>
+        <router-view />
+      </el-main>
+      <el-footer> Footer </el-footer>
+    </el-container>
+  </div>
 </template>
 
 <script lang="ts">
@@ -33,10 +30,28 @@ export default defineComponent({
 </script>
 
 <style scoped lang="stylus">
-@import '../style/basic.styl';
-
+// @import '../style/basic.styl';
 $top-height = 60px;
 $left-side-width = 80px;
+
+.el-header, .el-footer {
+  // background-color: #B3C0D1;
+  // color: #333;
+  // text-align: center;
+}
+
+.el-aside {
+  background-color: #D3DCE6;
+  // color: #333;
+  // text-align: center;
+  width: 100px;
+  max-width: 500px;
+}
+
+.el-main {
+  background-color: #E9EEF3;
+  // color: #333;
+}
 
 .main-container {
   position: absolute;
@@ -51,48 +66,6 @@ $left-side-width = 80px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
-  .top {
-    position: relative;
-    box-sizing: border-box;
-    width: 100%;
-    height: $top-height;
-    margin-bottom: 10px;
-  }
-
-  .bottom {
-    position: relative;
-    box-sizing: border-box;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: space-between;
-
-    .left {
-      position: relative;
-      width: $left-side-width;
-      height: 100%;
-      box-sizing: border-box;
-    }
-
-    .right {
-      position: relative;
-      width: 100%;
-      height: 100%;
-      box-sizing: border-box;
-      padding: 0 10px 10px 10px;
-
-      .content {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        background: $background-color;
-        border-radius: 5px;
-        box-sizing: border-box;
-        padding: 10px;
-      }
-    }
-  }
 }
 
 .page-links {
