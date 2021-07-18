@@ -19,7 +19,7 @@ export interface ITocSeri {
   slug: string
 }
 
-interface ITree {
+export interface ITree {
   label: string
   data?: ITocSeri
   children?: ITree[]
