@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="catalog">
     <el-tree :data="tree" :props="defaultProps" @node-click="handleNodeClick" :span="5">
     </el-tree>
   </div>
@@ -34,4 +34,31 @@ export default {
 }
 </script>
 
-<style></style>
+<style>
+.catalog {
+  color: #232323;
+  margin: 8px;
+  border: 0px;
+  height: 100%;
+}
+.el-tree {
+  overflow-y: auto !important;
+}
+.el-tree-node {
+  /* min-width: 100%; */
+  /* display: inline-block; */
+}
+.el-tree-node__label {
+  font-size: 16px;
+}
+.el-tree-node__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 36px;
+  cursor: pointer;
+}
+</style>

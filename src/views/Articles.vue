@@ -5,7 +5,7 @@
     </el-col>
     <el-col :span="19">
       <DocView :slug="currSlug" />
-      <el-footer class="footer"> 加入我们一起完善指北吧！ </el-footer>
+      <!-- <el-footer class="footer"> 加入我们一起完善指北吧！ </el-footer> -->
     </el-col>
   </el-row>
 </template>
@@ -38,13 +38,5 @@ export default {
   font-weight: bold;
   font-style: italic;
   color: #232323;
-}
-.catalog {
-  font-size: 40px;
-  color: #232323;
-  margin: 0px;
-  border: 0px;
-  height: 100%;
-  overflow-y: scroll;
 }
 </style>

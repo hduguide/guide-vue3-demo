@@ -6,7 +6,7 @@
           <Nav />
         </el-container>
       </el-header>
-      <el-main>
+      <el-main style="overflow-y: hidden">
         <router-view />
       </el-main>
     </el-container>
