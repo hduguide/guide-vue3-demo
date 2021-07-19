@@ -43,7 +43,7 @@ export default {
   overflow-y: auto;
 }
 .el-col-5 {
-  height: 620px;
+  height: 605px;
   overflow: hidden;
 }
 .el-tree {
@@ -53,6 +53,7 @@ export default {
 }
 .el-tree-node__label {
   font-size: 16px;
+  font-weight: 550;
 }
 .el-tree-node__content {
   display: -webkit-box;

@@ -1,7 +1,6 @@
 <template>
   <div class="home-container page-container">
-    <img class="vue-element-plus-logo" alt="Vue logo" src="../assets/logo.png" />
-    <div class="page-title">Vite2.x + Vue3.x + TypeScript + Element Plus</div>
+    <div class="page-title">Welcome to HDU guide</div>
   </div>
 </template>
 
