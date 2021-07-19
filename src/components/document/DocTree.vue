@@ -43,7 +43,7 @@ export default {
   overflow-y: auto;
 }
 .el-col-5 {
-  height: 490px;
+  height: 620px;
   overflow: hidden;
 }
 .el-tree {

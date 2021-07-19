@@ -41,7 +41,7 @@ export default {
   padding: 0px;
   border: 0px;
   margin: 0px;
-  height: 490px;
+  height: 620px;
   overflow-y: scroll;
   flex-direction: column;
   color: #262626;
