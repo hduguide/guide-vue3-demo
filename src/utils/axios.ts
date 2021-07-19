@@ -4,10 +4,10 @@ import { ElMessage } from 'element-plus'
 // const baseURL = 'https://api-yuque.dreamer2q.wang/api/v2'
 
 const axios: AxiosInstance = Axios.create({
-  baseURL: `${import.meta.env.BASE_URL}`,
+  baseURL: `${import.meta.env.VITE_MYBASE_URL}`,
   timeout: 20000 // 请求超时 20s
 })
-
+console.log(`${import.meta.env.VITE_MYBASE_URL}`)
 // 前置拦截器（发起请求之前的拦截）
 axios.interceptors.request.use(
   (config) => {

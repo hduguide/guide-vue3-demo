@@ -44,10 +44,6 @@ export default {
 .el-tree {
   overflow-y: auto !important;
 }
-.el-tree-node {
-  /* min-width: 100%; */
-  /* display: inline-block; */
-}
 .el-tree-node__label {
   font-size: 16px;
 }
