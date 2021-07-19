@@ -38,9 +38,10 @@ export default {
 
 <style>
 .articles {
+  padding: 0px;
   border: 0px;
-  margin: 16px;
-  height: 620px;
+  margin: 0px;
+  height: 490px;
   overflow-y: scroll;
   flex-direction: column;
   color: #262626;

@@ -37,12 +37,19 @@ export default {
 <style>
 .catalog {
   color: #232323;
-  margin: 8px;
-  border: 0px;
+  margin: 12px;
+  border: 6px;
   height: 100%;
+  overflow-y: auto;
+}
+.el-col-5 {
+  height: 490px;
+  overflow: hidden;
 }
 .el-tree {
-  overflow-y: auto !important;
+  display: inline-block;
+  min-width: 100%;
+  overflow-x: hidden;
 }
 .el-tree-node__label {
   font-size: 16px;
