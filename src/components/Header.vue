@@ -3,9 +3,6 @@
     <!-- <div class="title" @click="router.push('/')">
       Vite2.x + Vue3.x + TypeScript Starter
     </div> -->
-    <div class="go-github" @click="goGitHub">
-      <i class="icon el-icon-s-promotion"></i> GitHub
-    </div>
   </div>
 </template>
 
@@ -45,7 +42,6 @@ export default defineComponent({
   padding: 0 20px;
   box-sizing: border-box;
   font-weight: bold;
-
 
   .title {
     font-size: 20px;

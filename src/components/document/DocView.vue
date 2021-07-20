@@ -38,11 +38,9 @@ export default {
 
 <style>
 .articles {
-  padding: 0px;
+  margin-top: 0px;
   border: 0px;
-  margin: 0px;
-  height: 620px;
-  overflow-y: scroll;
+  padding: 0px;
   flex-direction: column;
   color: #262626;
   font-size: 18px;
@@ -59,15 +57,18 @@ export default {
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
+  /* z-index:300; */
 }
 ::-webkit-scrollbar-track {
   border-radius: 3px;
   background: rgba(0, 0, 0, 0.06);
   -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.08);
+  /* z-index:300; */
 }
 ::-webkit-scrollbar-thumb {
   border-radius: 3px;
   background: rgba(0, 0, 0, 0.12);
   -webkit-box-shadow: inset 0 0 10px rgba(11, 83, 240, 0.548);
+  /* z-index:300; */
 }
 </style>

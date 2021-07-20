@@ -3,10 +3,10 @@
     name="viewport"
     content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"
   />
-  <div class="main-container" style="overflow-y: hidden">
+  <div class="main-container">
     <el-container>
       <el-header>
-        <el-container>
+        <el-container class="navbar">
           <Nav />
         </el-container>
       </el-header>
@@ -37,7 +37,7 @@ $left-side-width = 80px;
 .el-header, .el-footer {
   // background-color: #B3C0D1;
   // color: #333;
-  // text-align: center;
+  text-align: center;
   height:100%;
 }
 
@@ -57,7 +57,7 @@ $left-side-width = 80px;
 }
 
 .main-container {
-  position: absolute;
+  // position: absolute;
   left: 0;
   right: 0;
   top: 0;
@@ -69,6 +69,7 @@ $left-side-width = 80px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  // z-index:300;
 }
 
 .page-links {
@@ -76,5 +77,15 @@ $left-side-width = 80px;
     font-weight: bold;
     margin: 0 20px;
   }
+}
+
+.navbar {
+  // position: sticky;
+  // position: -webkit-sticky;
+  // top: 10px;
+  position:fixed;
+  z-index:200;
+  width:100%;
+  background-color:#ffffff;
 }
 </style>
