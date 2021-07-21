@@ -1,5 +1,6 @@
 <template>
   <el-menu mode="horizontal" :default-active="currentIndex" @select="handleNav">
+    <h1 class="logo">杭电指北</h1>
     <el-menu-item
       v-for="(nav, index) in navList"
       :index="index.toString()"
@@ -8,6 +9,9 @@
     >
       {{ nav.name }}
     </el-menu-item>
+    <div class="go-github" @click="goGitHub">
+      <i class="icon el-icon-s-promotion"></i> GitHub
+    </div>
   </el-menu>
 </template>
 
@@ -33,15 +37,15 @@ export default {
           isActive: false,
           path: '/articles'
         },
+        // {
+        //   name: 'Vuex',
+        //   isActive: false,
+        //   path: '/vuex'
+        // },
         {
-          name: 'Vuex',
+          name: 'Changelog',
           isActive: false,
-          path: '/vuex'
-        },
-        {
-          name: 'Axios',
-          isActive: false,
-          path: '/axios'
+          path: '/changelog'
         },
         {
           name: 'About',
@@ -59,6 +63,10 @@ export default {
         router.push(reactiveData.navList[key])
       }
     })
+
+    const goGitHub = () => {
+      window.open('https://github.com/hduguide/vue3-starter')
+    }
 
     const changeNavActive = (currentPath: string) => {
       reactiveData.navList.forEach((v: NavItem) => {
@@ -85,12 +93,39 @@ export default {
     })
 
     return {
-      ...toRefs(reactiveData)
+      ...toRefs(reactiveData),
+      goGitHub
     }
   }
 }
 </script>
 
-<style scoped lang="stylus">
-// @import '../style/basic.styl';
+<style>
+.logo {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--c-text);
+  position: relative;
+  width: 70%;
+  border: 0px;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: row;
+  text-align: left;
+}
+.el-menu {
+  width: 100%;
+  display: flex;
+}
+.el-menu-item {
+  cursor: pointer;
+  font-size: 16px;
+}
+.go-github {
+  cursor: pointer;
+  font-size: 16px;
+}
+.icon {
+  font-size: 20px;
+}
 </style>

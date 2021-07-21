@@ -1,7 +1,8 @@
 <template>
   <div class="axios-container page-container">
-    <div class="page-title">Axios Test Page</div>
-    <div class="user-info-container">
+    <div class="page-title">Changelog Page</div>
+    <div class="page-title">TO DO</div>
+    <!-- <div class="user-info-container">
       <el-card class="box-card">
         <template #header>
           <div class="card-header">
@@ -17,7 +18,7 @@
           <div class="text item" v-if="userInfo?.blog">blog: {{ userInfo?.blog }}</div>
         </div>
       </el-card>
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -26,7 +27,7 @@ import { defineComponent, ref, Ref } from 'vue'
 import axios from '../utils/axios'
 
 export default defineComponent({
-  name: 'Axios',
+  name: 'Changelog',
   setup() {
     const userInfo: Ref = ref(null)
     const loading = ref(false)

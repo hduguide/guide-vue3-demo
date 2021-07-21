@@ -1,8 +1,11 @@
 <template>
   <div class="header">
-    <!-- <div class="title" @click="router.push('/')">
+    <div class="title" @click="router.push('/')">
       Vite2.x + Vue3.x + TypeScript Starter
-    </div> -->
+    </div>
+    <div class="go-github" @click="goGitHub">
+      <i class="icon el-icon-s-promotion"></i> GitHub
+    </div>
   </div>
 </template>
 
@@ -46,15 +49,6 @@ export default defineComponent({
   .title {
     font-size: 20px;
     cursor: pointer;
-  }
-
-  .go-github {
-    cursor: pointer;
-    font-size: 16px;
-
-    .icon {
-      font-size: 20px;
-    }
   }
 }
 </style>

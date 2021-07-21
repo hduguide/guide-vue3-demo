@@ -24,9 +24,9 @@ const routes: Array<RouteRecordRaw> = [
     component: Vuex
   },
   {
-    path: '/axios',
-    name: 'Axios',
-    component: () => import('@/views/Axios.vue') // 懒加载 Axios 组件
+    path: '/changelog',
+    name: 'Changelog',
+    component: () => import('@/views/Changelog.vue') // 懒加载 Changelog 组件
   },
   {
     path: '/about',

@@ -37,6 +37,9 @@ $left-side-width = 80px;
 .el-header, .el-footer {
   // background-color: #B3C0D1;
   // color: #333;
+  margin:0px;
+  border:0px;
+  padding:0px;
   text-align: center;
   height:100%;
 }
