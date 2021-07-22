@@ -1,6 +1,6 @@
 <template>
   <el-menu mode="horizontal" :default-active="currentIndex" @select="handleNav">
-    <div class="logo">📚杭电指北</div>
+    <div class="logo">杭电指北</div>
     <el-menu-item
       v-for="(nav, index) in navList"
       :index="index.toString()"
