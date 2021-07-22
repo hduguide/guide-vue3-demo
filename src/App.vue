@@ -24,4 +24,17 @@ export default defineComponent({
   width: 100%;
   height: 100%;
 }
+a {
+  color: #409eff;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+.div a {
+  color: #090;
+}
+.div a:hover {
+  color: #090;
+}
 </style>

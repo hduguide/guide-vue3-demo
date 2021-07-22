@@ -54,7 +54,8 @@ $left-side-width = 80px;
 
 .el-main {
   // background-color: #E9EEF3;
-  border:0px;
+  margin: 0px;
+  border: 0px;
   padding: 0px;
   // color: #333;
 }

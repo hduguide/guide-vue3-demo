@@ -1,9 +1,9 @@
 <template>
   <el-row justify="start">
-    <el-col :span="5">
+    <el-col :span="4">
       <DocTree @nodeClick="onNodeClick" />
     </el-col>
-    <el-col :span="19">
+    <el-col :span="20">
       <DocView :slug="currSlug" />
       <!-- <el-footer class="footer"> 加入我们一起完善指北吧！ </el-footer> -->
     </el-col>

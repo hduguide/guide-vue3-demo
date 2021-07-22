@@ -38,7 +38,10 @@ export default {
 
 <style>
 .articles {
-  margin-top: 0px;
+  margin-left: 52px;
+  margin-right: 52px;
+  margin-top: 25px;
+  margin-bottom: 25px;
   border: 0px;
   padding: 0px;
   flex-direction: column;
@@ -70,5 +73,24 @@ export default {
   background: rgba(0, 0, 0, 0.12);
   -webkit-box-shadow: inset 0 0 10px rgba(11, 83, 240, 0.548);
   /* z-index:300; */
+}
+h1 {
+  font-size: 2.2rem;
+  display: block;
+  font-size: 2em;
+  margin-block-start: 0.67em;
+  margin-block-end: 0.67em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+  line-height: 1.25;
 }
 </style>

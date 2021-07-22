@@ -1,6 +1,6 @@
 <template>
   <el-menu mode="horizontal" :default-active="currentIndex" @select="handleNav">
-    <h1 class="logo">杭电指北</h1>
+    <div class="logo">📚杭电指北</div>
     <el-menu-item
       v-for="(nav, index) in navList"
       :index="index.toString()"
@@ -105,17 +105,16 @@ export default {
   font-size: 1.3rem;
   font-weight: 600;
   color: var(--c-text);
-  position: relative;
+  /* position: relative; */
+  margin: 13px;
   width: 70%;
-  border: 0px;
-  padding: 0 20px;
   display: flex;
   flex-direction: row;
-  text-align: left;
 }
 .el-menu {
   width: 100%;
   display: flex;
+  box-shadow: 0 2px 5px rgb(0 0 0 / 8%);
 }
 .el-menu-item {
   cursor: pointer;

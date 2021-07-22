@@ -38,8 +38,7 @@ export default {
 .catalog {
   position: fixed;
   color: #232323;
-  margin: 8px;
-  border: 6px;
+  margin: 10px;
   height: 100%;
   overflow-y: auto;
 }
