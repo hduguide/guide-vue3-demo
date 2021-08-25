@@ -1,12 +1,10 @@
 <template>
-  <el-container class="articles">
-    <!-- <el-header> -->
-    <h1 class="articles_title">
+  <div class="doc-lake-view">
+    <h1 class="lake-title">
       {{ title }}
     </h1>
-    <!-- </el-header> -->
     <div v-html="body_html"></div>
-  </el-container>
+  </div>
 </template>
 
 <script>
@@ -36,44 +34,32 @@ export default {
 }
 </script>
 
-<style>
-.articles {
-  margin-left: 52px;
-  margin-right: 52px;
-  margin-top: 25px;
-  margin-bottom: 25px;
-  border: 0px;
-  padding: 0px;
-  flex-direction: column;
-  color: #262626;
-  font-size: 18px;
-  font-family: 'Chinese Quote', 'Segoe UI', Roboto, 'PingFang SC', 'Hiragino Sans GB',
-    'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+<style lang="styl">
+img {
+  overflow-x: scroll;
+  max-width: 100%;
+}
+
+.doc-lake-view {
+  display: flex;
+  flex-flow: column nowrap;
+  max-width: 760px;
+  padding: 8px;
+  margin-bottom: 32px;
+  overflow: auto;
   line-height: 1.74;
   letter-spacing: 0.05em;
+  font-family: 'Chinese Quote', 'Segoe UI', Roboto, 'PingFang SC', 'Hiragino Sans GB',
+    'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
-.articles_title {
+
+.lake-title {
   margin: 0px;
-  font-size: 35px;
-  text-align: center;
+  font-size: 36px;
+  padding: 6px 2px;
+  margin-bottom: 16px;
 }
-::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
-  /* z-index:300; */
-}
-::-webkit-scrollbar-track {
-  border-radius: 3px;
-  background: rgba(0, 0, 0, 0.06);
-  -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.08);
-  /* z-index:300; */
-}
-::-webkit-scrollbar-thumb {
-  border-radius: 3px;
-  background: rgba(0, 0, 0, 0.12);
-  -webkit-box-shadow: inset 0 0 10px rgba(11, 83, 240, 0.548);
-  /* z-index:300; */
-}
+
 h1 {
   font-size: 2.2rem;
   display: block;
@@ -84,6 +70,7 @@ h1 {
   margin-inline-end: 0px;
   font-weight: bold;
 }
+
 h1,
 h2,
 h3,

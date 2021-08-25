@@ -1,95 +1,51 @@
 <template>
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"
-  />
-  <div class="main-container">
-    <el-container>
-      <el-header>
-        <el-container class="navbar">
-          <Nav />
-        </el-container>
-      </el-header>
-      <el-main style="overflow-y: hidden">
-        <router-view />
-      </el-main>
-    </el-container>
+  <div class="body">
+    <header class="header">
+      <Header />
+    </header>
+    <section class="content">
+      <router-view />
+    </section>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import Nav from '@/components/Nav.vue'
+import Header from '@/components/Header.vue'
 
 export default defineComponent({
   name: 'Main',
   components: {
-    Nav
+    Header
   }
 })
 </script>
 
-<style scoped lang="stylus">
-// @import '../style/basic.styl';
-$top-height = 60px;
-$left-side-width = 80px;
-
-.el-header, .el-footer {
-  // background-color: #B3C0D1;
-  // color: #333;
-  margin: 0px;
-  border: 0px;
-  padding: 0px;
-  text-align: center;
-  height: 100%;
-}
-
-.el-aside {
-  // background-color: #D3DCE6;
-  // color: #333;
-  // text-align: center;
-  width: 100px;
-  max-width: 500px;
-}
-
-.el-main {
-  // background-color: #E9EEF3;
-  margin: 0px;
-  border: 0px;
-  padding: 0px;
-  // color: #333;
-}
-
-.main-container {
-  // position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  width: 100%;
-  height: 100%;
-  background: $second-background-color;
-  box-sizing: border-box;
+<style scoped>
+.body {
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  // z-index:300;
+  flex-flow: column nowrap;
+  /* height: 100%; */
+  /* width: 100%; */
+  position: relative;
 }
 
-.page-links {
-  a {
-    font-weight: bold;
-    margin: 0 20px;
-  }
-}
-
-.navbar {
-  // position: sticky;
-  // position: -webkit-sticky;
-  // top: 10px;
-  position: fixed;
-  z-index: 200;
+.header {
+  height: 60px;
   width: 100%;
-  background-color: #ffffff;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  opacity: 1;
+  z-index: 100;
+  background: white;
+}
+
+.content {
+  /* height: calc(100% - 60px); */
+  display: flex;
+  flex-flow: column nowrap;
 }
 </style>

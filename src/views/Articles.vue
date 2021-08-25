@@ -1,13 +1,12 @@
 <template>
-  <el-row justify="start">
-    <el-col :span="4">
+  <div class="row">
+    <div class="sidebar">
       <DocTree @nodeClick="onNodeClick" />
-    </el-col>
-    <el-col :span="20">
+    </div>
+    <article class="article">
       <DocView :slug="currSlug" />
-      <!-- <el-footer class="footer"> 加入我们一起完善指北吧！ </el-footer> -->
-    </el-col>
-  </el-row>
+    </article>
+  </div>
 </template>
 
 <script>
@@ -33,6 +32,30 @@ export default {
 </script>
 
 <style>
+.row {
+  /* position: relative; */
+  display: flex;
+  flex-flow: row nowrap;
+  height: 100%;
+  width: 100%;
+}
+
+.sidebar {
+  position: fixed;
+  top: 60px;
+  left: 0;
+  width: 250px;
+  height: calc(100% - 60px);
+  flex: none;
+  background: #fafafa;
+}
+
+.article {
+  padding-left: 300px;
+  flex: 1 1 auto;
+  height: 100%;
+}
+
 .footer {
   font-size: 12px;
   font-weight: bold;
