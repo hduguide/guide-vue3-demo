@@ -1,9 +1,11 @@
 <template>
-  <div class="doc-lake-view">
-    <h1 class="lake-title">
-      {{ title }}
-    </h1>
-    <div v-html="body_html"></div>
+  <div class="doc-container">
+    <div class="doc-lake-view">
+      <h1 class="lake-title">
+        {{ title }}
+      </h1>
+      <div v-html="body_html"></div>
+    </div>
   </div>
 </template>
 
@@ -40,10 +42,16 @@ img {
   max-width: 100%;
 }
 
+.doc-container {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+}
+
 .doc-lake-view {
   display: flex;
   flex-flow: column nowrap;
-  max-width: 760px;
+  width: 760px;
   padding: 8px;
   margin-bottom: 32px;
   overflow: auto;

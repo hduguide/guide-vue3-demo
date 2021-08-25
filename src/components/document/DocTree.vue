@@ -48,8 +48,9 @@ export default {
 }
 </script>
 
-<style>
+<style lang="css">
 .catalog {
+  margin-left: 8px;
   padding: 16px 4px;
   height: 100%;
   overflow: auto;

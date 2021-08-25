@@ -31,9 +31,8 @@ export default {
 }
 </script>
 
-<style>
+<style lang="css" scoped>
 .row {
-  /* position: relative; */
   display: flex;
   flex-flow: row nowrap;
   height: 100%;
@@ -44,7 +43,7 @@ export default {
   position: fixed;
   top: 60px;
   left: 0;
-  width: 250px;
+  width: 300px;
   height: calc(100% - 60px);
   flex: none;
   background: #fafafa;
@@ -56,10 +55,19 @@ export default {
   height: 100%;
 }
 
-.footer {
-  font-size: 12px;
-  font-weight: bold;
-  font-style: italic;
-  color: #232323;
+/* Tree 滚动条样式 */
+.sidebar ::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.sidebar ::-webkit-scrollbar-track {
+  border-radius: 3px;
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.sidebar ::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+  background: rgba(0, 0, 0, 0.25);
 }
 </style>
