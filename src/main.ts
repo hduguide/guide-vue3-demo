@@ -1,6 +1,6 @@
 import { createApp } from 'vue'
-import importUiFramework from '@/utils/import-ui-framework'
 import { createMetaManager } from 'vue-meta'
+import importUiFramework from '@/utils/import-ui-framework'
 import router from '@/router/index'
 import { key, store } from '@/store'
 import App from './App.vue'

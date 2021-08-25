@@ -37,11 +37,11 @@ $left-side-width = 80px;
 .el-header, .el-footer {
   // background-color: #B3C0D1;
   // color: #333;
-  margin:0px;
-  border:0px;
-  padding:0px;
+  margin: 0px;
+  border: 0px;
+  padding: 0px;
   text-align: center;
-  height:100%;
+  height: 100%;
 }
 
 .el-aside {
@@ -87,9 +87,9 @@ $left-side-width = 80px;
   // position: sticky;
   // position: -webkit-sticky;
   // top: 10px;
-  position:fixed;
-  z-index:200;
-  width:100%;
-  background-color:#ffffff;
+  position: fixed;
+  z-index: 200;
+  width: 100%;
+  background-color: #ffffff;
 }
 </style>
