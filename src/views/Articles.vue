@@ -4,7 +4,8 @@
       <DocTree @nodeClick="onNodeClick" />
     </div>
     <article class="article">
-      <DocView :item="doc.data" :slug="currSlug" />
+      <!-- <LakeView :body="lakeHtml" /> -->
+      <DocView :item="doc.data" />
     </article>
     <el-backtop></el-backtop>
   </div>
@@ -13,14 +14,16 @@
 <script lang="ts">
 import DocTree from '@/components/document/DocTree.vue'
 import DocView from '@/components/document/DocView.vue'
+// import LakeView from '@/components/larkLake/index'
 import { getDocumentBySlug } from '@/utils'
-import { ITocSeri } from '@/common/types'
+import { IDocSeri, ITocSeri } from '@/common/types'
 
 export default {
   title: '杭电指北',
   components: {
     DocTree,
     DocView
+    // LakeView
   },
   methods: {
     onNodeClick(data: ITocSeri) {
@@ -35,7 +38,7 @@ export default {
   data() {
     return {
       doc: {
-        data: {}
+        data: {} as IDocSeri
       }
     }
   },
@@ -54,6 +57,12 @@ export default {
     this.doc = data
     this.setTitle(data.data.title)
     next()
+  },
+  computed: {
+    lakeHtml() {
+      const body = this.doc.data.body_lake
+      return body || '<h1>loading...</h1>'
+    }
   }
 }
 </script>

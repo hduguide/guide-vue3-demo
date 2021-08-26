@@ -33,7 +33,7 @@ export default {
 }
 </script>
 
-<style lang="styl">
+<style lang="stylus">
 img {
   overflow-x: scroll;
   max-width: 100%;
@@ -54,8 +54,7 @@ img {
   overflow: auto;
   line-height: 1.74;
   letter-spacing: 0.05em;
-  font-family: 'Chinese Quote', 'Segoe UI', Roboto, 'PingFang SC', 'Hiragino Sans GB',
-    'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Chinese Quote', 'Segoe UI', Roboto, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 .lake-title {
@@ -76,12 +75,7 @@ h1 {
   font-weight: bold;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
   line-height: 1.25;
 }
