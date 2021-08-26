@@ -1,33 +1,17 @@
 /* eslint-disable import/prefer-default-export */
 /* eslint-disable camelcase */
 
-export interface ITocSeri {
-  type: string
-  title: string
-  uuid: string
-  url: string
-  prev_uuid: string
-  sibling_uuid: string
-  child_uuid: string
-  parent_uuid: string
-  doc_id: number
-  level: number
-  id: number
-  open_window: number
-  visible: number
-  depth: number
-  slug: string
-}
-
-export interface ITree {
-  label: string
-  data?: ITocSeri
-  children?: ITree[]
-}
+import { ITocSeri, ITree } from '@/common/types'
+import axios from './axios'
 
 export function transformTocTree(toc: ITocSeri[]): ITree[] {
   function buildTree(item: ITocSeri): ITree {
-    const tree = { label: item.title, data: item, children: [] } as ITree
+    const tree: ITree = {
+      slug: item.slug,
+      label: item.title,
+      data: item,
+      children: []
+    }
     toc
       .filter((v) => v.parent_uuid === item.uuid)
       .forEach((v) => {
@@ -36,11 +20,22 @@ export function transformTocTree(toc: ITocSeri[]): ITree[] {
     return tree
   }
 
-  const tree = { label: 'root', children: [] } as ITree
+  const tree: ITree = { slug: '', label: 'root', children: [] }
   toc
     .filter((v) => v.parent_uuid === '')
     .forEach((v) => {
       tree.children?.push(buildTree(v))
     })
   return tree.children!
+}
+
+export async function getDocumentTocTree(): Promise<ITree[]> {
+  const { data } = await axios.get('/repos/hduer/guide/toc')
+  const tree = transformTocTree(data.data)
+  return tree
+}
+
+export async function getDocumentBySlug(slug: string): Promise<any> {
+  const { data } = await axios.get(`/repos/hduer/guide/docs/${slug}`)
+  return data
 }

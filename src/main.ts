@@ -1,7 +1,7 @@
 import { createApp } from 'vue'
 import { createMetaManager } from 'vue-meta'
 import importUiFramework from '@/utils/import-ui-framework'
-import router from '@/router/index'
+import router from '@/router'
 import { key, store } from '@/store'
 import App from './App.vue'
 

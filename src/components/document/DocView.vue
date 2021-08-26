@@ -4,33 +4,30 @@
       <h1 class="lake-title">
         {{ title }}
       </h1>
-      <div v-html="body_html"></div>
+      <div v-html="html"></div>
     </div>
   </div>
 </template>
 
-<script>
-import axios from '@/utils/axios'
-
+<script lang="ts">
 export default {
-  name: 'DocView',
-  props: ['slug'],
+  props: ['item'],
   data() {
     return {
-      title: '',
-      body_html: '<h1>loading...</h1>'
+      data: {} as any
     }
   },
-  async mounted() {
-    const { data } = await axios.get(`/repos/hduer/guide/docs/${this.slug}`)
-    this.title = data.data.title
-    this.body_html = data.data.body_html
-  },
   watch: {
-    async slug(n) {
-      const { data } = await axios.get(`/repos/hduer/guide/docs/${n}`)
-      this.title = data.data.title
-      this.body_html = data.data.body_html
+    item(n) {
+      this.$data.data = n
+    }
+  },
+  computed: {
+    title() {
+      return this.data.title || ''
+    },
+    html() {
+      return this.data.body_html || '<h1> Loading ... </h1>'
     }
   }
 }

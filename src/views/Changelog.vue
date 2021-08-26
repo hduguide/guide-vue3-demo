@@ -2,23 +2,6 @@
   <div class="axios-container page-container">
     <div class="page-title">Changelog Page</div>
     <div class="page-title">TO DO</div>
-    <!-- <div class="user-info-container">
-      <el-card class="box-card">
-        <template #header>
-          <div class="card-header">
-            <span>XPoet</span>
-            <el-button class="button" type="text" @click="getUserInfo"
-              >点击获取XPoet信息
-            </el-button>
-          </div>
-        </template>
-        <div class="info-list-box" v-loading="loading">
-          <div class="text item" v-if="userInfo?.name">name: {{ userInfo?.name }}</div>
-          <div class="text item" v-if="userInfo?.bio">bio: {{ userInfo?.bio }}</div>
-          <div class="text item" v-if="userInfo?.blog">blog: {{ userInfo?.blog }}</div>
-        </div>
-      </el-card>
-    </div> -->
   </div>
 </template>
 
@@ -37,7 +20,6 @@ export default defineComponent({
       axios
         .get('/users/XPoet')
         .then((response) => {
-          console.log('response: ', response.data)
           userInfo.value = response.data
           loading.value = false
         })

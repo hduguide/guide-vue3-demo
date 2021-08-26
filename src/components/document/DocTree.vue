@@ -1,6 +1,13 @@
 <template>
   <div class="catalog">
-    <el-tree :data="tree" :props="defaultProps" @node-click="handleNodeClick">
+    <el-tree
+      empty-text="Loading..."
+      :data="tree"
+      node-key="slug"
+      :props="defaultProps"
+      :default-expanded-keys="defaultExpanded"
+      @node-click="handleNodeClick"
+    >
       <template v-slot="{ node, data }">
         <span :style="getStyle(data)"> {{ getLabel(node) }}</span>
       </template>
@@ -9,8 +16,8 @@
 </template>
 
 <script lang="ts">
-import axios from '../../utils/axios'
-import { ITree, transformTocTree } from '../../utils/yuque'
+import { getDocumentTocTree } from '@/utils'
+import { ITree } from '@/common/types'
 
 export default {
   emits: ['nodeClick'],
@@ -24,9 +31,14 @@ export default {
     }
   },
   async created() {
-    const { data } = await axios.get('/repos/hduer/guide/toc')
-    const tree = transformTocTree(data.data)
+    const tree = await getDocumentTocTree()
     this.$data.tree = tree
+  },
+  computed: {
+    defaultExpanded() {
+      const { slug } = this.$route.params
+      return slug ? [slug] : null
+    }
   },
   methods: {
     handleNodeClick(node: any) {

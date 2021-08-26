@@ -19,6 +19,11 @@ const routes: Array<RouteRecordRaw> = [
     }
   },
   {
+    path: '/articles/:slug',
+    name: 'Article',
+    component: Articles
+  },
+  {
     path: '/vuex',
     name: 'Vuex',
     component: Vuex

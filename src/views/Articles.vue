@@ -4,29 +4,48 @@
       <DocTree @nodeClick="onNodeClick" />
     </div>
     <article class="article">
-      <DocView :slug="currSlug" />
+      <DocView :item="doc.data" :slug="currSlug" />
     </article>
   </div>
 </template>
 
 <script>
-// import DocTile from '@/components/document/DocTile.vue'
 import DocTree from '@/components/document/DocTree.vue'
 import DocView from '@/components/document/DocView.vue'
+import { getDocumentBySlug } from '@/utils'
 
 export default {
-  components: { DocTree, DocView },
-  name: 'Articles',
-  setup() {},
+  components: {
+    DocTree,
+    DocView
+  },
   methods: {
     onNodeClick(data) {
-      this.currSlug = data.slug
+      if (data.doc_id) {
+        this.$router.push(`/articles/${data.slug}`)
+      }
     }
   },
   data() {
     return {
-      currSlug: 'readme'
+      doc: {
+        data: {}
+      }
     }
+  },
+  async mounted() {
+    const { slug } = this.$route.params
+    const data = await getDocumentBySlug(slug || 'readme')
+    this.doc = data
+    if (!slug) {
+      this.$router.push('/articles/readme')
+    }
+  },
+  async beforeRouteUpdate(to, from, next) {
+    const { slug } = to.params
+    const data = await getDocumentBySlug(slug)
+    this.$data.doc = data
+    next()
   }
 }
 </script>
