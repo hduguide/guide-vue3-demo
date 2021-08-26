@@ -4,26 +4,42 @@
       <DocTree @nodeClick="onNodeClick" />
     </div>
     <article class="article">
-      <!-- <LakeView :body="lakeHtml" /> -->
-      <DocView :item="doc.data" />
+      <div>
+        <h1>{{ meta.title }}</h1>
+      </div>
+      <LakeView :body="lakeHtml" />
     </article>
     <el-backtop></el-backtop>
   </div>
 </template>
 
 <script lang="ts">
+import { defineComponent } from 'vue'
 import DocTree from '@/components/document/DocTree.vue'
-import DocView from '@/components/document/DocView.vue'
-// import LakeView from '@/components/larkLake/index'
+import LakeView from '@/components/larkLake/index'
 import { getDocumentBySlug } from '@/utils'
 import { IDocSeri, ITocSeri } from '@/common/types'
 
-export default {
-  title: '杭电指北',
+export default defineComponent({
   components: {
     DocTree,
-    DocView
-    // LakeView
+    LakeView
+  },
+  async mounted() {
+    const { slug } = this.$route.params as { slug: string }
+    const data = await getDocumentBySlug(slug || 'readme')
+    this.document = data
+    if (!slug) {
+      this.$router.push('/articles/readme')
+    }
+    this.setTitle(data.data.title)
+  },
+  data() {
+    return {
+      document: {
+        data: {} as IDocSeri
+      }
+    }
   },
   methods: {
     onNodeClick(data: ITocSeri) {
@@ -35,36 +51,26 @@ export default {
       document.title = `${title} - 杭电指北`
     }
   },
-  data() {
-    return {
-      doc: {
-        data: {} as IDocSeri
+  computed: {
+    meta() {
+      const { data } = this.$data.document
+      return {
+        title: data.title
       }
+    },
+    lakeHtml() {
+      const body = this.document.data.body_lake
+      return body || '<h1>loading...</h1>'
     }
-  },
-  async mounted() {
-    const { slug } = this.$route.params as { slug: string }
-    const data = await getDocumentBySlug(slug || 'readme')
-    this.doc = data
-    if (!slug) {
-      this.$router.push('/articles/readme')
-    }
-    this.setTitle(data.data.title)
   },
   async beforeRouteUpdate(to, from, next) {
     const { slug } = to.params as { slug: string }
     const data = await getDocumentBySlug(slug)
-    this.doc = data
+    this.document = data
     this.setTitle(data.data.title)
     next()
-  },
-  computed: {
-    lakeHtml() {
-      const body = this.doc.data.body_lake
-      return body || '<h1>loading...</h1>'
-    }
   }
-}
+})
 </script>
 
 <style lang="css" scoped>

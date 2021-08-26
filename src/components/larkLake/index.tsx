@@ -1,7 +1,8 @@
 import { parser, Node } from 'posthtml-parser'
 import { defineComponent } from 'vue'
-
 import LakeNode from './lake'
+import styles from './index.module.css'
+import './style/lake.styl'
 
 export default defineComponent({
   name: 'LakeView',
@@ -14,15 +15,10 @@ export default defineComponent({
 
   render() {
     return (
-      <div class="doc-container">
-        <div class="doc-lake-view">
-          <h1 class="lake-title"> </h1>
-          <div>
-            {this.root.map((node) => {
-              return <LakeNode node={node}></LakeNode>
-            })}
-          </div>
-        </div>
+      <div class={styles.lakeView}>
+        {this.root.map((node) => {
+          return <LakeNode node={node}></LakeNode>
+        })}
       </div>
     )
   },
@@ -35,17 +31,22 @@ export default defineComponent({
   },
 
   created() {
-    const ast = parser(this.html)
-    this.root = ast
-    console.log('ast => ', ast)
+    const root = this.updateRoot(this.html)
+    console.log('rootAst => ', root)
+  },
+
+  methods: {
+    updateRoot(html: string) {
+      this.root = parser(html)
+      return this.root
+    }
   },
 
   watch: {
     body(nb) {
       this.html = nb
-      const ast = parser(this.html)
-      this.root = ast
-      console.log('ast => ', ast)
+      const root = this.updateRoot(nb)
+      console.log('rootAst => ', root)
     }
   }
 })
