@@ -4,10 +4,12 @@
       <DocTree @nodeClick="onNodeClick" />
     </div>
     <article class="article">
-      <div>
-        <h1>{{ meta.title }}</h1>
+      <div class="container">
+        <div>
+          <h1>{{ meta.title }}</h1>
+        </div>
+        <LakeView :body="lakeHtml" />
       </div>
-      <LakeView :body="lakeHtml" />
     </article>
     <el-backtop></el-backtop>
   </div>
@@ -95,6 +97,14 @@ export default defineComponent({
   padding-left: 300px;
   flex: 1 1 auto;
   height: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  flex-flow: column nowrap;
 }
 
 /* Tree 滚动条样式 */

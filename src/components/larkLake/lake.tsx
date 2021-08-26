@@ -1,5 +1,6 @@
 import { defineComponent, h } from 'vue'
 import { Node, NodeTag } from 'posthtml-parser'
+import LakeCard from './card'
 
 const reservedTags = ['meta', '']
 
@@ -19,11 +20,8 @@ export default defineComponent({
       return ''
     }
     if (nt.tag == 'card') {
-      return (
-        <div>
-          <h1>CUSTOM CARD</h1>
-        </div>
-      )
+      // console.log('CARD => ', nt)
+      return h(LakeCard, nt.attrs)
     }
     const children: Node[] = (nt.content as Node[]) ?? []
     return h(

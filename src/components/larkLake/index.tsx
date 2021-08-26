@@ -32,7 +32,6 @@ export default defineComponent({
 
   created() {
     const root = this.updateRoot(this.html)
-    console.log('rootAst => ', root)
   },
 
   methods: {
@@ -46,7 +45,6 @@ export default defineComponent({
     body(nb) {
       this.html = nb
       const root = this.updateRoot(nb)
-      console.log('rootAst => ', root)
     }
   }
 })
