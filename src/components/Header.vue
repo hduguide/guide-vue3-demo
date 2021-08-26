@@ -1,9 +1,8 @@
 <template>
-  <el-row class="header" justify="space-between" align="middle">
-    <el-col :span="2">
-      <div class="logo">杭电指北</div>
-    </el-col>
-    <el-col :span="6">
+  <div class="header">
+    <div class="logo">杭电指北</div>
+    <div class="space"></div>
+    <div class="menu">
       <el-menu mode="horizontal" :default-active="currentIndex" @select="handleNav">
         <el-menu-item
           v-for="(nav, index) in navList"
@@ -13,29 +12,27 @@
         >
           {{ nav.name }}
         </el-menu-item>
-        <div class="go-github" @click="goGitHub">
-          <i class="icon el-icon-s-promotion"></i> GitHub
-        </div>
       </el-menu>
-    </el-col>
-  </el-row>
+    </div>
+    <div class="go-github" @click="goGitHub">
+      <i class="icon el-icon-s-promotion"></i> GitHub
+    </div>
+  </div>
 </template>
 
 <script lang="ts">
 import { reactive, toRefs, onMounted, watch } from 'vue'
 import { useRouter } from 'vue-router'
-import { NavItem } from '../common/types'
 import menus from '../common/configs/menu'
 
 export default {
-  name: 'Nav',
   setup() {
     const router = useRouter()
     const reactiveData = reactive({
       navList: menus,
       currentIndex: '0',
 
-      navClick(e: NavItem) {
+      navClick(e: any) {
         router.push(e.path)
       },
 
@@ -49,7 +46,7 @@ export default {
     }
 
     const changeNavActive = (currentPath: string) => {
-      reactiveData.navList.forEach((v: NavItem) => {
+      reactiveData.navList.forEach((v: any) => {
         const temp = v
         temp.isActive = temp.path === currentPath
         return temp
@@ -83,6 +80,13 @@ export default {
 .header {
   padding: 0 8px;
   border-bottom: solid 1px #e6e6e6;
+  background: white;
+  display: flex;
+  flex-flow: row wrap-reverse;
+}
+
+.space {
+  flex: 1 1 auto;
 }
 
 .el-menu.el-menu--horizontal {

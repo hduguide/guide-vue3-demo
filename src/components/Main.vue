@@ -38,9 +38,7 @@ export default defineComponent({
   align-items: center;
   position: sticky;
   top: 0;
-  opacity: 1;
   z-index: 100;
-  background: white;
 }
 
 .content {

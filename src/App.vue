@@ -9,6 +9,9 @@ import '@/style/basic.styl'
 
 export default defineComponent({
   name: 'App',
+  metaInfo: {
+    title: '测试标题'
+  },
   components: {
     Main
   }

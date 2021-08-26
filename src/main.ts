@@ -1,10 +1,9 @@
 import { createApp } from 'vue'
-import { createMetaManager } from 'vue-meta'
 import importUiFramework from '@/utils/import-ui-framework'
 import router from '@/router'
 import { key, store } from '@/store'
 import App from './App.vue'
+import titleMixin from '@/common/mixin/title'
 
 const app = createApp(App)
-const metaManager = createMetaManager()
-importUiFramework(app).use(metaManager).use(router).use(store, key).mount('#app')
+importUiFramework(app).mixin(titleMixin).use(router).use(store, key).mount('#app')

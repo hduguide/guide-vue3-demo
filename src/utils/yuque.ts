@@ -1,7 +1,7 @@
 /* eslint-disable import/prefer-default-export */
 /* eslint-disable camelcase */
 
-import { ITocSeri, ITree } from '@/common/types'
+import { IDocSeri, ITocSeri, ITree } from '@/common/types'
 import axios from './axios'
 
 export function transformTocTree(toc: ITocSeri[]): ITree[] {
@@ -35,7 +35,7 @@ export async function getDocumentTocTree(): Promise<ITree[]> {
   return tree
 }
 
-export async function getDocumentBySlug(slug: string): Promise<any> {
+export async function getDocumentBySlug(slug: string): Promise<{ data: IDocSeri }> {
   const { data } = await axios.get(`/repos/hduer/guide/docs/${slug}`)
   return data
 }

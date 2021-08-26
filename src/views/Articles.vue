@@ -6,24 +6,30 @@
     <article class="article">
       <DocView :item="doc.data" :slug="currSlug" />
     </article>
+    <el-backtop></el-backtop>
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import DocTree from '@/components/document/DocTree.vue'
 import DocView from '@/components/document/DocView.vue'
 import { getDocumentBySlug } from '@/utils'
+import { ITocSeri } from '@/common/types'
 
 export default {
+  title: '杭电指北',
   components: {
     DocTree,
     DocView
   },
   methods: {
-    onNodeClick(data) {
+    onNodeClick(data: ITocSeri) {
       if (data.doc_id) {
         this.$router.push(`/articles/${data.slug}`)
       }
+    },
+    setTitle(title: string) {
+      document.title = `${title} - 杭电指北`
     }
   },
   data() {
@@ -34,17 +40,19 @@ export default {
     }
   },
   async mounted() {
-    const { slug } = this.$route.params
+    const { slug } = this.$route.params as { slug: string }
     const data = await getDocumentBySlug(slug || 'readme')
     this.doc = data
     if (!slug) {
       this.$router.push('/articles/readme')
     }
+    this.setTitle(data.data.title)
   },
   async beforeRouteUpdate(to, from, next) {
-    const { slug } = to.params
+    const { slug } = to.params as { slug: string }
     const data = await getDocumentBySlug(slug)
-    this.$data.doc = data
+    this.doc = data
+    this.setTitle(data.data.title)
     next()
   }
 }
