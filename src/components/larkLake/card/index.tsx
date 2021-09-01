@@ -28,7 +28,7 @@ export default defineComponent({
       value = value.substring(5)
     }
     const data = JSON.parse(value)
-    console.log('card => ', data)
+    // console.log('card => ', data)
     this.meta = data['data'] ?? data
   },
 

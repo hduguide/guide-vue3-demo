@@ -28,6 +28,16 @@ module.exports = {
         props: true,
         ignorePropertyModificationsFor: ['state', 'config']
       }
+    ],
+    'prefer-destructuring': [
+      'error',
+      {
+        array: false,
+        object: true
+      },
+      {
+        enforceForRenamedProperties: false
+      }
     ]
   },
   settings: {}
