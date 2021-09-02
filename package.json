@@ -42,6 +42,7 @@
     "axios": "^0.21.1",
     "element-plus": "^1.0.2-beta.36",
     "posthtml-parser": "^0.10.0",
+    "romans": "^1.1.2",
     "vue": "^3.0.5",
     "vue-router": "^4.0.6",
     "vuex": "^4.0.0"
@@ -50,6 +51,7 @@
     "@commitlint/cli": "^12.1.1",
     "@commitlint/config-conventional": "^12.1.1",
     "@types/jest": "^26.0.22",
+    "@types/node": "^16.7.10",
     "@typescript-eslint/eslint-plugin": "^4.21.0",
     "@typescript-eslint/parser": "^4.21.0",
     "@vitejs/plugin-vue": "^1.2.1",
