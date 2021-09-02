@@ -1,4 +1,4 @@
-import { defineComponent, h, Component } from 'vue'
+import { defineComponent, h, Component, resolveComponent } from 'vue'
 import { Node, NodeTag } from 'posthtml-parser'
 import LakeCard from './card'
 import { LakeOliNode, LakeUliNode } from './card/list'
@@ -54,9 +54,10 @@ export default defineComponent({
       return skipRender
     }
 
+    const LakeNode = resolveComponent('LakeNode')
     const renderChildren = () => {
       const children: Node[] = (nt.content as Node[]) ?? []
-      return children.map((child) => <lake-node node={child}></lake-node>)
+      return children.map((child) => h(LakeNode, { node: child }))
     }
 
     const customRender = registeredRenders[htmlTag]

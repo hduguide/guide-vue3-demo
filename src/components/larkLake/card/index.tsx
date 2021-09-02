@@ -1,4 +1,11 @@
-import { defineComponent } from 'vue'
+import { defineComponent, h } from 'vue'
+import ImageCard from './image'
+// import styles from '../style/card.css'
+import styles from './index.module.css'
+
+const registeredLakeCard: Record<string, any> = {
+  image: ImageCard
+}
 
 export default defineComponent({
   name: 'LakeCard',
@@ -7,17 +14,19 @@ export default defineComponent({
 
   render() {
     const meta = this.meta
-    switch (this.name) {
-      case 'image':
-        return (
-          <div>
-            <img src={meta.src} alt={meta.name} />
-          </div>
-        )
+    const CardNode = registeredLakeCard[this.name]
+    if (CardNode) {
+      return h(CardNode, { meta })
     }
     return (
-      <div>
-        不支持的卡片 <code>{JSON.stringify(meta)}</code>
+      <div class={styles.nosupport}>
+        <div>
+          不支持的卡片:
+          <span>
+            Type: {this.type}, name: {this.name}
+          </span>
+        </div>
+        <json-viewer value={meta} copyable boxed sort />
       </div>
     )
   },

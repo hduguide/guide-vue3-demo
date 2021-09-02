@@ -31,7 +31,7 @@ export default defineComponent({
   },
 
   created() {
-    const root = this.updateRoot(this.html)
+    this.updateRoot(this.html)
   },
 
   methods: {
@@ -44,7 +44,7 @@ export default defineComponent({
   watch: {
     body(nb) {
       this.html = nb
-      const root = this.updateRoot(nb)
+      this.updateRoot(nb)
     }
   }
 })
