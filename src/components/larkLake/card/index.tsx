@@ -1,10 +1,14 @@
 import { defineComponent, h } from 'vue'
 import ImageCard from './image'
-// import styles from '../style/card.css'
-import styles from './index.module.css'
+import FileCard from './file'
+import LabelCard from './label'
+
+import styles from './styles/index.module.css'
 
 const registeredLakeCard: Record<string, any> = {
-  image: ImageCard
+  image: ImageCard,
+  file: FileCard,
+  label: LabelCard
 }
 
 export default defineComponent({

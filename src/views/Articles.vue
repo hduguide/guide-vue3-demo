@@ -105,6 +105,7 @@ export default defineComponent({
 .container {
   display: flex;
   flex-flow: column nowrap;
+  flex: 0 1 0%;
 }
 
 /* Tree 滚动条样式 */

@@ -1,4 +1,4 @@
-import { defineComponent, h, Component, resolveComponent } from 'vue'
+import { defineComponent, h, resolveComponent } from 'vue'
 import { Node, NodeTag } from 'posthtml-parser'
 import LakeCard from './card'
 import { LakeOliNode, LakeUliNode } from './card/list'

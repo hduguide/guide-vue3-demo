@@ -5,7 +5,12 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 import Main from '@/components/Main.vue'
+
+/**
+ * 引入全局样式
+ */
 import '@/style/basic.styl'
+import '@/style/index.css'
 
 export default defineComponent({
   name: 'App',

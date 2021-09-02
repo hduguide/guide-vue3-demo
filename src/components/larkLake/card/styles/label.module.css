@@ -1,0 +1,8 @@
+.label {
+  @apply inline-block px-1 mx-0.5 text-sm;
+  max-width: 250px;
+  border-radius: 4px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}

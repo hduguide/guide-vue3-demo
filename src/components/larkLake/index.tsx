@@ -2,7 +2,7 @@ import { parser, Node } from 'posthtml-parser'
 import { defineComponent } from 'vue'
 import LakeNode from './lake'
 import styles from './index.module.css'
-import './style/lake.styl'
+import './styles/global.styl'
 
 export default defineComponent({
   name: 'LakeView',

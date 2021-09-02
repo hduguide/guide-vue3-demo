@@ -72,3 +72,61 @@ export function renderChildren(node: NodeTag) {
     default: render
   }
 }
+
+/**
+ * superbytes format bytes unit to human readable
+ * @param bytes
+ * @param arg1
+ * @param arg2
+ * @returns
+ */
+export function superbytes(byte: number, arg1?: any, arg2?: any) {
+  const UNITS = ['B', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB']
+  const bytes = Math.abs(byte)
+  let divider: number = 1024
+  let digits = 0
+
+  if (arg1 === undefined && arg2 === undefined) {
+    divider = 1024
+    digits = 2
+  }
+  if (typeof arg1 === 'boolean') {
+    if (arg1) {
+      divider = 1000
+    } else {
+      divider = 1024
+    }
+    if (typeof arg2 === 'number') {
+      digits = arg2
+    } else {
+      digits = 2
+    }
+  } else if (typeof arg1 === 'number') {
+    digits = arg1
+    if (typeof arg2 === 'boolean') {
+      if (arg2) {
+        divider = 1000
+      } else {
+        divider = 1024
+      }
+    } else {
+      divider = 1024
+    }
+  }
+
+  if (Number.isFinite(bytes)) {
+    if (bytes < divider) {
+      const num = bytes
+      return `${num} ${UNITS[0]}`
+    }
+
+    for (let i = 1; i <= 8; ) {
+      if (bytes >= divider ** i && bytes < divider ** (i + 1)) {
+        const num = (bytes / divider ** i).toFixed(digits)
+        return `${num} ${UNITS[i]}`
+      }
+      i += 1
+    }
+  }
+  return null
+}
