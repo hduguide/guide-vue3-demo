@@ -17,6 +17,10 @@
     'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
+.lakeView a:hover {
+  text-decoration: none;
+}
+
 .lakeTitle {
   margin: 0px;
   font-size: 36px;

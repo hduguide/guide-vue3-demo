@@ -2,13 +2,15 @@ import { defineComponent, h } from 'vue'
 import ImageCard from './image'
 import FileCard from './file'
 import LabelCard from './label'
+import BookmarkLinkCard from './bookmarklink'
 
 import styles from './styles/index.module.css'
 
 const registeredLakeCard: Record<string, any> = {
   image: ImageCard,
   file: FileCard,
-  label: LabelCard
+  label: LabelCard,
+  bookmarklink: BookmarkLinkCard
 }
 
 export default defineComponent({
