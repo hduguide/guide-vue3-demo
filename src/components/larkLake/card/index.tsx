@@ -4,6 +4,7 @@ import FileCard from './file'
 import LabelCard from './label'
 import BookmarkLinkCard from './bookmarklink'
 import CodeCard from './code'
+import TableCard from './table'
 
 import styles from './styles/index.module.css'
 
@@ -12,7 +13,8 @@ const registeredLakeCard: Record<string, any> = {
   file: FileCard,
   label: LabelCard,
   bookmarklink: BookmarkLinkCard,
-  codeblock: CodeCard
+  codeblock: CodeCard,
+  table: TableCard
 }
 
 export default defineComponent({
