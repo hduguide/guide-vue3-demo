@@ -8,7 +8,7 @@ export default defineComponent({
   props: ['meta'],
 
   setup({ meta }) {
-    console.log('meta => ', meta)
+    // console.log('meta => ', meta)
 
     return () => (
       <div style={''}>

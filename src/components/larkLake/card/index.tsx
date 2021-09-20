@@ -5,6 +5,8 @@ import LabelCard from './label'
 import BookmarkLinkCard from './bookmarklink'
 import CodeCard from './code'
 import TableCard from './table'
+import YuqueCard from './yuque'
+import YuqueInlineCard from './yuqueinline'
 
 import styles from './styles/index.module.css'
 
@@ -14,7 +16,9 @@ const registeredLakeCard: Record<string, any> = {
   label: LabelCard,
   bookmarklink: BookmarkLinkCard,
   codeblock: CodeCard,
-  table: TableCard
+  table: TableCard,
+  yuque: YuqueCard,
+  yuqueinline: YuqueInlineCard
 }
 
 export default defineComponent({
