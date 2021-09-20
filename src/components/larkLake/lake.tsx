@@ -69,7 +69,9 @@ export default defineComponent({
     if (nt.tag == 'span') {
       const fontSize = attrs.class.find((v) => v.startsWith('lake-fontsize-'))
       if (fontSize) {
-        attrs.style['font-size'] = `${fontSize.split('-')[2]}px`
+        const size = fontSize.split('-')[2]
+        // lake-fontsize-1515 wtf?
+        attrs.style['font-size'] = `${size == '1515' ? '15' : size}px`
       }
     }
 
