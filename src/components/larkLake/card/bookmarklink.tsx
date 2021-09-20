@@ -27,32 +27,41 @@ export default defineComponent({
     const { detail } = meta
     console.log(meta)
 
+    const urlDetail = detail.belong ?? detail.belong_url ?? detail.url
+
     return () => (
       <a
         style={{ textDecoration: 'none', color: 'unset' }}
-        class="py-2"
+        class="my-4 m-2"
         target="_blank"
         href={meta.src}
       >
         <div
-          style={{ border: '1px solid #d8d8d8' }}
-          class="w-full border space-y-2 p-2 flex flex-row items-center flex-1 flex-nowrap"
+          style={{ border: '1px solid #d8d8d8', height: '98px' }}
+          class="w-full border flex flex-row items-center flex-1 flex-nowrap text-sm"
         >
-          <div class="w-0 px-4 flex flex-1 flex-col space-y-1">
-            <div class="">
-              <p>{detail.title}</p>
+          <div class="w-0 px-4 py-2 flex flex-1 flex-col space-y-1">
+            <div class="w-full overflow-ellipsis overflow-hidden whitespace-nowrap">
+              {detail.title}
             </div>
             <div class="w-full overflow-ellipsis overflow-hidden whitespace-nowrap">
               {detail.desc}
             </div>
             <div class="flex flex-row flex-nowrap space-x-2">
               <img class="h-4 self-center" src={detail.icon} alt="" />
-              <span>{detail.url}</span>
+              <span>{urlDetail}</span>
             </div>
           </div>
-          <div class="flex-0">
-            <img src={detail.image} alt="" />
-          </div>
+          <div
+            class="flex-0 h-full"
+            style={{
+              width: '166px',
+              backgroundImage: `url(${detail.image})`,
+              backgroundSize: 'contain',
+              backgroundRepeat: 'no-repeat',
+              backgroundPosition: 'right'
+            }}
+          ></div>
         </div>
       </a>
     )
