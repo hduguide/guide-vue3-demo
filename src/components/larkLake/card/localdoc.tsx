@@ -33,7 +33,7 @@ export default defineComponent({
   props: ['meta'],
 
   setup({ meta }) {
-    console.log('meta => ', meta)
+    // console.log('meta => ', meta)
 
     if (meta.status != 'done') {
       return () => <div class="border p-4 m-4">文件状态错误：{meta.status}</div>
