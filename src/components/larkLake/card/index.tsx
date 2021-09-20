@@ -7,6 +7,7 @@ import CodeCard from './code'
 import TableCard from './table'
 import YuqueCard from './yuque'
 import YuqueInlineCard from './yuqueinline'
+import ThirdPartyCard from './thirdparty'
 
 import styles from './styles/index.module.css'
 
@@ -18,7 +19,8 @@ const registeredLakeCard: Record<string, any> = {
   codeblock: CodeCard,
   table: TableCard,
   yuque: YuqueCard,
-  yuqueinline: YuqueInlineCard
+  yuqueinline: YuqueInlineCard,
+  thirdparty: ThirdPartyCard
 }
 
 export default defineComponent({
