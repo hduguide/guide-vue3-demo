@@ -8,6 +8,7 @@ import TableCard from './table'
 import YuqueCard from './yuque'
 import YuqueInlineCard from './yuqueinline'
 import ThirdPartyCard from './thirdparty'
+import MathCard from './math'
 
 import styles from './styles/index.module.css'
 
@@ -20,7 +21,8 @@ const registeredLakeCard: Record<string, any> = {
   table: TableCard,
   yuque: YuqueCard,
   yuqueinline: YuqueInlineCard,
-  thirdparty: ThirdPartyCard
+  thirdparty: ThirdPartyCard,
+  math: MathCard
 }
 
 export default defineComponent({
