@@ -49,6 +49,7 @@ export default defineComponent({
         this.$router.push(`/articles/${data.url}`)
       }
     },
+
     setTitle(title: string) {
       document.title = `${title} - 杭电指北`
     }
@@ -67,10 +68,12 @@ export default defineComponent({
   },
   async beforeRouteUpdate(to, from, next) {
     const { slug } = to.params as { slug: string }
-    const data = await getDocumentBySlug(slug)
-    this.document = data
-    this.setTitle(data.data.title)
-    next()
+    if (slug) {
+      const data = await getDocumentBySlug(slug)
+      this.document = data
+      this.setTitle(data.data.title)
+      next()
+    }
   }
 })
 </script>

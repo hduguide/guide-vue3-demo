@@ -8,7 +8,6 @@
           v-for="(nav, index) in navList"
           :index="index.toString()"
           :key="index"
-          :keyPath="nav.path"
         >
           {{ nav.name }}
         </el-menu-item>
@@ -23,42 +22,52 @@
 <script lang="ts">
 import { reactive, toRefs, onMounted, watch } from 'vue'
 import { useRouter } from 'vue-router'
-import menus from '../common/configs/menu'
 
 export default {
   setup() {
     const router = useRouter()
     const reactiveData = reactive({
-      navList: menus,
+      navList: [
+        {
+          name: '首页',
+          path: '/'
+        },
+        {
+          name: '文章',
+          url: '/articles/readme',
+          path: '/articles/:slug'
+        },
+        {
+          name: '更新日志',
+          path: '/changelog'
+        },
+        {
+          name: '关于',
+          path: '/about'
+        }
+      ],
       currentIndex: '0',
 
-      navClick(e: any) {
-        router.push(e.path)
-      },
-
-      handleNav(key: any) {
-        router.push(reactiveData.navList[key])
+      handleNav(index: any) {
+        const menu = reactiveData.navList[index]
+        router.push(menu.url ?? menu.path)
       }
     })
 
     const goGitHub = () => {
-      window.open('https://github.com/hduguide/vue3-starter')
+      window.open('https://github.com/hduguide/guide-vue3-demo')
     }
 
     const changeNavActive = (currentPath: string) => {
-      reactiveData.navList.forEach((v: any) => {
-        const temp = v
-        temp.isActive = temp.path === currentPath
-        return temp
-      })
       reactiveData.currentIndex = reactiveData.navList
-        .findIndex((v) => v.isActive === true)
+        .findIndex((v) => v.path === currentPath)
         .toString()
     }
+
     watch(
       () => router.currentRoute.value,
       (_n) => {
-        changeNavActive(_n.path)
+        changeNavActive(_n.matched[0].path)
       }
     )
 

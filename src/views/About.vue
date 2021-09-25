@@ -1,21 +1,26 @@
 <template>
-  <div class="test-container page-container">
-    <div class="page-title">This is an about page</div>
+  <div class="flex flex-row justify-center">
+    <LakeView :body="body" />
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
+import LakeView from '@/components/larkLake'
+import { getDocumentBySlug } from '@/utils'
 
 export default defineComponent({
-  name: 'About'
+  components: {
+    LakeView
+  },
+  data() {
+    return {
+      body: '<h1> Loading ... </h1>'
+    }
+  },
+  async mounted() {
+    const { data } = await getDocumentBySlug('about')
+    this.$data.body = data.content
+  }
 })
 </script>
-
-<style scoped lang="stylus">
-button {
-  cursor pointer
-  font-size 20px
-  padding 5px
-}
-</style>

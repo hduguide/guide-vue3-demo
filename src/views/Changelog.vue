@@ -1,71 +1,26 @@
 <template>
-  <div class="axios-container page-container">
-    <div class="page-title">Changelog Page</div>
-    <div class="page-title">TO DO</div>
+  <div class="flex flex-row justify-center">
+    <LakeView :body="body" />
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, Ref } from 'vue'
-import axios from '../utils/axios'
+import { defineComponent } from 'vue'
+import LakeView from '@/components/larkLake'
+import { getDocumentBySlug } from '@/utils'
 
 export default defineComponent({
-  name: 'Changelog',
-  setup() {
-    const userInfo: Ref = ref(null)
-    const loading = ref(false)
-
-    const getUserInfo = () => {
-      loading.value = true
-      axios
-        .get('/users/XPoet')
-        .then((response) => {
-          userInfo.value = response.data
-          loading.value = false
-        })
-        .catch((error) => {
-          loading.value = false
-          console.error(error)
-        })
-    }
-
+  components: {
+    LakeView
+  },
+  data() {
     return {
-      userInfo,
-      loading,
-      getUserInfo
+      body: '<h1> Loading ... </h1>'
     }
+  },
+  async mounted() {
+    const { data } = await getDocumentBySlug('changelog')
+    this.$data.body = data.content
   }
 })
 </script>
-
-<style scoped lang="stylus">
-.axios-container {
-  .user-info-container {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-
-    .info-list-box {
-      padding: 10px;
-
-      .text {
-        font-size: 14px;
-      }
-
-      .item {
-        margin-bottom: 18px;
-      }
-    }
-
-    .card-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .box-card {
-      width: 480px;
-    }
-  }
-}
-</style>
