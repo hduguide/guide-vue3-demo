@@ -17,7 +17,7 @@ const config = {
 export function transformTocTree(toc: ITocSeri[]): ITree[] {
   function buildTree(item: ITocSeri): ITree {
     const tree: ITree = {
-      slug: item.slug,
+      slug: item.url,
       label: item.title,
       data: item,
       children: []

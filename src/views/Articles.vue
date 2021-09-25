@@ -46,7 +46,7 @@ export default defineComponent({
   methods: {
     onNodeClick(data: ITocSeri) {
       if (data.doc_id) {
-        this.$router.push(`/articles/${data.slug}`)
+        this.$router.push(`/articles/${data.url}`)
       }
     },
     setTitle(title: string) {

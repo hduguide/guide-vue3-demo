@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-row justify-center">
-    <LakeView :body="body" />
+    <LakeView style="width: 814px" :body="body" />
   </div>
 </template>
 
