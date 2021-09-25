@@ -31,7 +31,7 @@ export default defineComponent({
   props: ['meta'],
 
   setup({ meta }) {
-    console.log('meta => ', meta)
+    // console.log('meta => ', meta)
     const { detail } = meta
 
     const height = meta.heightMode == 'custom' ? meta.height : 400

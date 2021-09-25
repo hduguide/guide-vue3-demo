@@ -24,7 +24,7 @@ export default defineComponent({
   props: ['meta'],
 
   setup({ meta }) {
-    console.log('meta => ', meta)
+    // console.log('meta => ', meta)
     const { entrance } = meta
     const height = meta.height ?? heightMaps[entrance] ?? defaultheight
 

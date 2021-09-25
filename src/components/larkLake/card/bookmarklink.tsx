@@ -25,7 +25,7 @@ export default defineComponent({
 
   setup({ meta }) {
     const { detail } = meta
-    console.log(meta)
+    //console.log(meta)
 
     const urlDetail = detail.belong ?? detail.belong_url ?? detail.url
 

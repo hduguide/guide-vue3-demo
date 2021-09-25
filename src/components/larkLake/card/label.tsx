@@ -16,7 +16,7 @@ export default defineComponent({
   props: ['meta'],
 
   setup({ meta }) {
-    console.log(meta)
+    // console.log(meta)
     const { colorIndex } = meta
     const style = status[colorIndex ?? 0]
 
