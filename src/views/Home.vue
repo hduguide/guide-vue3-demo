@@ -1,21 +1,27 @@
 <template>
-  <div class="home-container page-container">
-    <div class="page-title">Welcome to HDU guide</div>
+  <div class="flex flex-row justify-center">
+    <LakeView :body="body" />
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
+import LakeView from '@/components/larkLake'
+import { getDocletById } from '@/utils'
 
 export default defineComponent({
-  name: 'Home'
+  components: {
+    LakeView
+  },
+  name: 'Home',
+  data() {
+    return {
+      body: '<h1> Loading ... </h1>'
+    }
+  },
+  async mounted() {
+    const { data } = await getDocletById(21411351)
+    this.$data.body = data.body_asl
+  }
 })
 </script>
-
-<style scoped lang="stylus">
-.home-container {
-  .vue-element-plus-logo {
-    width 50%
-  }
-}
-</style>

@@ -40,11 +40,10 @@ export default defineConfig({
 
     // 设置代理，根据我们项目实际情况配置
     proxy: {
-      '/api/v2': {
-        target: 'https://api-yuque.dreamer2q.wang/api/v2',
+      '/api/': {
+        target: 'https://www.yuque.com/',
         changeOrigin: true,
-        secure: false,
-        rewrite: (path) => path.replace('/api/v2', '/')
+        secure: false
       }
     }
   }

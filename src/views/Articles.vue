@@ -61,7 +61,7 @@ export default defineComponent({
       }
     },
     lakeHtml() {
-      const body = this.document.data.body_lake
+      const body = this.document.data.content
       return body || '<h1>loading...</h1>'
     }
   },

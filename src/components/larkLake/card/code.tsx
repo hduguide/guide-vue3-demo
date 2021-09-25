@@ -11,6 +11,7 @@ import 'highlight.js/styles/base16/darcula.css'
 //   "theme": "default",
 //   "__spacing": "both",
 //   "heightLimit": true,
+//   "height": "748/null",
 //   "id": "GOL5a",
 //   "margin": {
 //     "top": true,
@@ -27,7 +28,7 @@ export default defineComponent({
     const { mode, code } = meta
     const res = hljs.highlight(code, { language: mode })
 
-    console.log(code.split('\n'))
+    // console.log(code.split('\n'))
 
     const addLineNumbers = (html: string) => {
       let num = 1
