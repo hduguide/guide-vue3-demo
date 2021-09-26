@@ -17,9 +17,8 @@
             href="https://github.com/hduguide/guide-vue3-demo"
             rel="noopener noreferrer"
             target="_blank"
-            aria-label="Github上"
             style="text-decoration: none"
-            >在Github上查看</a
+            >Github</a
           >
           <i class="el-icon-s-promotion"></i>
         </el-menu-item>
