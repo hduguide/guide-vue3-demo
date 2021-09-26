@@ -1,5 +1,6 @@
 <template>
   <div class="header">
+    <div><img src="../../public/favicon.png" style="width: 55px" /></div>
     <div class="logo">杭电指北</div>
     <div class="space"></div>
     <div class="menu">
@@ -11,10 +12,18 @@
         >
           {{ nav.name }}
         </el-menu-item>
+        <el-menu-item>
+          <a
+            href="https://github.com/hduguide/guide-vue3-demo"
+            rel="noopener noreferrer"
+            target="_blank"
+            aria-label="在Github上查看"
+            style="text-decoration: none"
+            >在Github上查看</a
+          >
+          <i class="el-icon-s-promotion"></i>
+        </el-menu-item>
       </el-menu>
-    </div>
-    <div class="go-github" @click="goGitHub">
-      <i class="icon el-icon-s-promotion"></i> GitHub
     </div>
   </div>
 </template>
@@ -103,8 +112,9 @@ export default {
 }
 
 .logo {
-  padding: 8px 16px;
+  color: #2c3e50;
+  font-size: 1.7rem;
+  padding-left: 6px;
   font-weight: 600;
-  font-size: 20px;
 }
 </style>
