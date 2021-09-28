@@ -12,7 +12,7 @@
         >
           {{ nav.name }}
         </el-menu-item>
-        <el-menu-item>
+        <el-menu-item class="gotogithub">
           <a
             href="https://github.com/hduguide/guide-vue3-demo"
             rel="noopener noreferrer"
@@ -100,6 +100,23 @@ export default {
   background: white;
   display: flex;
   flex-flow: row wrap-reverse;
+}
+
+@media screen and (max-width: 620px) {
+  .el-menu-items {
+  }
+  .logo {
+    display: none;
+  }
+  .space {
+    display: none;
+  }
+  .menu {
+    display: flex;
+  }
+  .gotogithub {
+    display: none;
+  }
 }
 
 .space {

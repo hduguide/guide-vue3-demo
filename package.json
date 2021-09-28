@@ -41,6 +41,7 @@
   "dependencies": {
     "axios": "^0.21.1",
     "clipboard": "^2.0.8",
+    "css-mediaquery": "^0.1.2",
     "element-plus": "^1.0.2-beta.36",
     "highlight.js": "^11.2.0",
     "highlightjs-line-numbers.js": "^2.8.0",
