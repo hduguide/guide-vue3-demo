@@ -28,7 +28,7 @@ export default defineComponent({
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  min-width: 600px;
+  min-width: 320px;
   width: 100%;
 }
 

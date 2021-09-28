@@ -102,11 +102,15 @@ export default {
   flex-flow: row wrap-reverse;
 }
 
-@media screen and (max-width: 620px) {
-  .el-menu-items {
+@media screen and (max-width: 500px) {
+  .menu {
+    margin-left: 8px;
   }
-  .logo {
-    display: none;
+  ._lakeView_1i0bm_13 {
+    width: 100% !important;
+  }
+  .el-menu-item {
+    padding: 0 0.8rem !important;
   }
   .space {
     display: none;
@@ -115,6 +119,11 @@ export default {
     display: flex;
   }
   .gotogithub {
+    display: none;
+  }
+}
+@media screen and (max-width: 620px) {
+  .logo {
     display: none;
   }
 }
