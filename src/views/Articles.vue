@@ -5,12 +5,28 @@
     </div>
     <article class="article">
       <div class="container">
+        <div class="treeMenu">
+          <el-button icon="el-icon-menu" size="mini" @click="drawer = true">
+            Menu
+          </el-button>
+        </div>
         <div>
           <h1>{{ meta.title }}</h1>
         </div>
         <LakeView :body="lakeHtml" />
       </div>
     </article>
+    <el-drawer
+      v-model="drawer"
+      title="杭电指北"
+      direction="ltr"
+      :size="300"
+      append-to-body
+      lock-scroll
+      :with-header="false"
+    >
+      <DocTree @nodeClick="onNodeClick" />
+    </el-drawer>
     <el-backtop></el-backtop>
   </div>
 </template>
@@ -38,6 +54,7 @@ export default defineComponent({
   },
   data() {
     return {
+      drawer: false,
       document: {
         data: {} as IDocSeri
       }
@@ -47,6 +64,7 @@ export default defineComponent({
     onNodeClick(data: ITocSeri) {
       if (data.doc_id) {
         this.$router.push(`/articles/${data.url}`)
+        this.drawer = false
       }
     },
 
@@ -84,20 +102,40 @@ export default defineComponent({
   flex-flow: row nowrap;
   height: 100%;
   width: 100%;
+
+  --sidebar-width: 280px;
+}
+
+@media screen and (max-width: 600px) {
+  .row {
+    --sidebar-width: 0px;
+  }
+  .sidebar {
+    display: none;
+  }
+  .treeMenu {
+    display: block !important;
+    position: sticky;
+    top: 60px;
+  }
+}
+
+.treeMenu {
+  display: none;
 }
 
 .sidebar {
   position: fixed;
   top: 60px;
   left: 0;
-  width: 300px;
+  width: var(--sidebar-width);
   height: calc(100% - 60px);
   flex: none;
   background: #fafafa;
 }
 
 .article {
-  padding-left: 300px;
+  padding-left: var(--sidebar-width);
   flex: 1 1 auto;
   height: 100%;
   display: flex;
@@ -106,6 +144,7 @@ export default defineComponent({
 }
 
 .container {
+  position: relative;
   display: flex;
   flex-flow: column nowrap;
   flex: 0 1 0%;
