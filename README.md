@@ -19,3 +19,35 @@
 
 技术问题请提交 issues，for any technical problmes, please fire an issue.
 
+## Contrib
+
+自然此项目有太多需要完善的地方了，如果你有兴趣，可以很简单的贡献你的代码。
+
+1. 拉取到本地
+
+```bash
+git clone git@github.com:hduguide/guide-vue3-demo.git
+```
+
+2. 安装依赖
+
+```bash
+npm install
+```
+
+3. 启动调试
+
+```bash
+npm run dev
+```
+
+4. 提交代码
+
+```bash
+git add .
+git commit -m "balabala"
+```
+
+# LICENSE
+
+[MIT](/LICENSE) copyright @ 2021 hduer.cn
