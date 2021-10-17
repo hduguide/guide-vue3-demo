@@ -17,9 +17,9 @@
 
 如果你对“指北内容”有更好的想法，请移步到 [语雀讨论区](https://www.yuque.com/hduer/topics)。
 
-技术问题请提交 issues，for any technical problmes, please fire an issue.
+技术问题请提交 issues，for any technical problems, please fire an issue.
 
-## Contrib
+## Contribute
 
 自然此项目有太多需要完善的地方了，如果你有兴趣，可以很简单的贡献你的代码。
 
