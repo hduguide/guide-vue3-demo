@@ -39,16 +39,17 @@ img {
   max-width: 100%;
 }
 
-.doc-container {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
-}
+// .doc-container {
+//   display: flex;
+//   flex-flow: row nowrap;
+//   justify-content: center;
+//   max-width: 760px;
+//   width: auto!important;
+// }
 
 .doc-lake-view {
   display: flex;
   flex-flow: column nowrap;
-  width: 760px;
   padding: 8px;
   margin-bottom: 32px;
   overflow: auto;

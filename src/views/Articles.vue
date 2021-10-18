@@ -101,24 +101,36 @@ export default defineComponent({
   display: flex;
   flex-flow: row nowrap;
   height: 100%;
-  width: 100%;
-
+  /* width: 100%; */
   --sidebar-width: 280px;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
   .row {
     --sidebar-width: 0px;
   }
+
   .sidebar {
     display: none;
   }
+
   .treeMenu {
     display: block !important;
     position: sticky;
     top: 60px;
   }
+
+  /* .doc-lake-view {
+    width: 480px!important;
+  } */
 }
+
+/* @media screen and (min-width: 800px) and (max-width: 1080px){
+  .sidebar {
+    display: static;
+    width: auto;
+  }
+} */
 
 .treeMenu {
   display: none;
@@ -147,7 +159,14 @@ export default defineComponent({
   position: relative;
   display: flex;
   flex-flow: column nowrap;
-  flex: 0 1 0%;
+  flex: 1 1 auto;
+  margin: 0 100px;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    margin: 0 60px;
+  }
 }
 
 /* Tree 滚动条样式 */

@@ -102,30 +102,11 @@ export default {
   flex-flow: row wrap-reverse;
 }
 
-@media screen and (max-width: 500px) {
-  .menu {
-    margin-left: 8px;
-  }
-  ._lakeView_1i0bm_13 {
-    width: 100% !important;
-  }
-  .el-menu-item {
-    padding: 0 0.8rem !important;
-  }
-  .space {
-    display: none;
-  }
-  .menu {
-    display: flex;
-  }
-  .gotogithub {
-    display: none;
-  }
-}
-@media screen and (max-width: 620px) {
-  .logo {
-    display: none;
-  }
+.logo {
+  color: #2c3e50;
+  font-size: 1.7rem;
+  padding-left: 6px;
+  font-weight: 600;
 }
 
 .space {
@@ -136,10 +117,26 @@ export default {
   border-bottom: none;
 }
 
-.logo {
-  color: #2c3e50;
-  font-size: 1.7rem;
-  padding-left: 6px;
-  font-weight: 600;
+.menu {
+  display: flex;
+}
+
+@media screen and (max-width: 768px) {
+  .logo {
+    display: none;
+  }
+  .gotogithub {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 475px) {
+  .space {
+    width: 40px;
+  }
+
+  .el-menu-item {
+    padding: 0 6px;
+  }
 }
 </style>
